@@ -177,13 +177,14 @@ nav {
   border-radius: 30px;
   border: none;
   background: none;
-  /* background-color: #6752ea; */
-  background-color: #ff4d1c;
+  background-color: #6752ea;
+  /* background-color: #ff4d1c; */
   color: #f4f3f8;
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   border: transparent;
+  cursor: pointer;
 }
 
 .view-cv {
@@ -192,19 +193,30 @@ nav {
   border-radius: 30px;
   border: none;
   background: none;
-  /* color: #040415;
-  background-color: #f4f3f8; */
-  background-color: #6752ea;
-  color: #f4f3f8;
+  /* color: #040415; */
+  background-color: #f4f3f8;
+  /* background-color: #6752ea;
+  color: #f4f3f8; */
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .cnt-me:hover,
 .view-cv:hover {
-  background-color: #d1d0d6;
+  /* background-color: #d1d0d6;
+  color: #040415; */
+  background-color: #ff4d1c;
+}
+
+.view-cv-a {
+  text-decoration: none;
   color: #040415;
+}
+
+.view-cv:hover > a {
+  color: #f4f3f8;
 }
 
 .right {
