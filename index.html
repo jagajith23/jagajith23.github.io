@@ -27,13 +27,20 @@
           <div class="circle"></div>
           <h1 class="name"><span class="two-letters">Ja</span>gajith</h1>
         </div>
-        <div class="menu">
-          <ul class="ul-menu">
-            <li><a href="#welcome-screen" class="a-menu">Home</a></li>
-            <li><a href="#" class="a-menu">About</a></li>
-            <li><a href="#" class="a-menu">Skills</a></li>
-            <li><a href="#" class="a-menu">Projects</a></li>
-            <li><a href="#" class="a-menu">Contact</a></li>
+        <div class="nav-start">
+          <ul class="topnav" id="myTopnav">
+            <a
+              href="javascript:void(0);"
+              class="topnav-icon"
+              onclick="myFunction()"
+            >
+              <i class="fa fa-bars"></i>
+            </a>
+            <a href="#welcome-screen" class="a-topnav">Home</a>
+            <a href="#" class="a-topnav">About</a>
+            <a href="#" class="a-topnav">Skills</a>
+            <a href="#" class="a-topnav">Projects</a>
+            <a href="#" class="a-topnav">Contact</a>
           </ul>
           <div class="nav-bottom-line"></div>
         </div>
@@ -90,5 +97,15 @@
         </div>
       </div>
     </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById("myTopnav");
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
+      }
+    </script>
   </body>
 </html>
