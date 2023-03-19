@@ -6,7 +6,6 @@
 
 body {
   font-family: "Montserrat", sans-serif;
-  padding: 0 7%;
   background-color: #fff;
 }
 
@@ -16,6 +15,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   width: 100%;
+  padding: 0 7%;
   padding-top: 10px;
 }
 
@@ -124,13 +124,15 @@ nav {
   );
 }
 
+/* Welcome page */
+
 .welcome-container {
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 8% 0;
+  padding: 8% 7%;
 }
 
 /* .left {
@@ -250,33 +252,239 @@ nav {
   top: 150px;
 }
 
-@media screen and (max-width: 1300px) {
-  .welcome-text-1 {
-    font-size: 30px;
+/* Info page */
+.info-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f4f3f8;
+  padding: 4% 7%;
+}
+
+.info-container h1 {
+  font-size: 35px;
+  font-weight: 700;
+  color: #787879;
+  letter-spacing: 0.95px;
+  padding-bottom: 10px;
+}
+
+.info-container p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #787879;
+}
+
+.hover {
+  transform: scale(1.1);
+}
+
+.hover .info-right p {
+  /* font-size: 20px; */
+  font-weight: 600;
+}
+
+.hover .info-left h1 {
+  /* font-size: 75px; */
+  color: #6752ea;
+}
+
+.hover .info-left p {
+  /* font-size: 20px; */
+  font-weight: 600;
+  color: #6752ea;
+}
+
+.educational-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3% 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.work-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3% 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.info-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.info-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 50%;
+  padding: 0 15% 0 0;
+}
+
+/* Skills page */
+
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: first baseline;
+  padding: 4% 7%;
+  width: 100%;
+}
+
+.skills-container h1 {
+  padding-bottom: 30px;
+}
+
+.skills-container img {
+  width: 25px;
+  height: 25px;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 3% 0;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.skill p {
+  padding-top: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #040415;
+}
+
+.skill:hover {
+  transform: scale(1.5);
+}
+
+.skill-hover img {
+  width: 50px;
+  height: 50px;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.skill-hover p {
+  padding-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #040415;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@media screen and (max-width: 750px) {
+  .info-container {
+    align-items: center;
   }
 
-  .welcome-text-2 {
-    font-size: 40px;
+  .educational-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 0;
+    width: auto;
+  }
+
+  .work-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+  }
+
+  .info-right {
+    display: flex;
+    flex-direction: column;
+    padding: 5% 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .info-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .skill img {
+    width: 15px;
+    height: 15px;
+  }
+
+  .skill p {
+    font-size: 10px;
   }
 }
 
-@media screen and (max-width: 1200px) {
-  .welcome-text-1 {
-    font-size: 25px;
+@media screen and (max-width: 940px) {
+  .nav-start {
+    margin-left: 8%;
   }
 
-  .welcome-text-2 {
-    font-size: 35px;
-  }
-}
-
-@media screen and (max-width: 1110px) {
-  .welcome-text-1 {
-    font-size: 20px;
+  .topnav a:not(:first-child) {
+    display: none;
   }
 
-  .welcome-text-2 {
-    font-size: 30px;
+  .topnav-icon {
+    display: block;
+  }
+
+  .topnav.responsive {
+    position: relative;
+  }
+
+  .topnav.responsive.topnav-icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
   }
 }
 
@@ -315,33 +523,89 @@ nav {
   }
 }
 
-@media screen and (max-width: 940px) {
-  /* drop down on clicking three bars in navbar */
-  .nav-start {
-    margin-left: 8%;
+@media screen and (max-width: 1110px) {
+  .welcome-text-1 {
+    font-size: 20px;
   }
 
-  .topnav a:not(:first-child) {
-    display: none;
+  .welcome-text-2 {
+    font-size: 30px;
   }
 
-  .topnav-icon {
-    display: block;
+  .info-container h1 {
+    font-size: 28px;
+    font-weight: 700;
   }
 
-  .topnav.responsive {
-    position: relative;
+  .hover .info-left h1 {
+    font-size: 60px;
   }
 
-  .topnav.responsive.topnav-icon {
-    position: absolute;
-    right: 0;
-    top: 0;
+  .info-container p {
+    font-size: 13px;
+    font-weight: 400;
   }
 
-  .topnav.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+  .hover .info-right p {
+    font-size: 15px;
+    font-weight: 600;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .welcome-text-1 {
+    font-size: 25px;
+  }
+
+  .welcome-text-2 {
+    font-size: 35px;
+  }
+
+  .info-container h1 {
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  .info-container p {
+    font-size: 15px;
+    font-weight: 400;
+  }
+
+  .hover .info-right p {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .hover .info-left h1 {
+    font-size: 65px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .welcome-text-1 {
+    font-size: 30px;
+  }
+
+  .welcome-text-2 {
+    font-size: 40px;
+  }
+
+  .info-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+
+  .info-container p {
+    font-size: 18px;
+    font-weight: 400;
+  }
+
+  .hover .info-right p {
+    font-size: 17px;
+    font-weight: 600;
+  }
+
+  .hover .info-left h1 {
+    font-size: 70px;
   }
 }

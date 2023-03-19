@@ -96,6 +96,126 @@
           </div>
         </div>
       </div>
+      <div class="info-container">
+        <div class="educational-info">
+          <div class="info-left">
+            <h1>4</h1>
+            <p>Years of education</p>
+          </div>
+          <div class="info-right">
+            <p>
+              Bannari Amman Institute of Technology <br />
+              B.E in Computer Science and Engineering <br />
+              2020 - 2024 <br />
+              Tamil Nadu, India
+            </p>
+          </div>
+        </div>
+        <div class="work-info">
+          <div class="info-left">
+            <h1>5+</h1>
+            <p>projects</p>
+          </div>
+          <div class="info-right">
+            <p>
+              Prolific, Flutter and MERN stack developer with passion for
+              creating high quality applications that are functional and
+              aesthetically pleasing. <br />
+              Developed custom neural network models for underwater object
+              detection and classification.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="skills-container">
+        <h1>My Skills</h1>
+        <div class="row">
+          <div class="skill">
+            <img src="assets/python.png" alt="" />
+            <p>Python</p>
+          </div>
+          <div class="skill">
+            <img src="assets/cprog.png" alt="" />
+            <p>C</p>
+          </div>
+          <div class="skill">
+            <img src="assets/cpp.png" alt="" />
+            <p>C++</p>
+          </div>
+          <div class="skill">
+            <img src="assets/java.png" alt="" />
+            <p>Java</p>
+          </div>
+          <div class="skill">
+            <img src="assets/dart.png" alt="" />
+            <p>Dart</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="skill">
+            <img src="assets/flutter.png" alt="" />
+            <p>Flutter</p>
+          </div>
+          <div class="skill">
+            <img src="assets/html.png" alt="" />
+            <p>HTML5/CSS</p>
+          </div>
+          <div class="skill">
+            <img src="assets/javascript.png" alt="" />
+            <p>Javascript</p>
+          </div>
+          <div class="skill">
+            <img src="assets/jquery.png" alt="" />
+            <p>JQuery</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="skill">
+            <img src="assets/deeplearning.png" alt="" />
+            <p>Deep Learning</p>
+          </div>
+          <div class="skill">
+            <img src="assets/tensorflow.png" alt="" />
+            <p>Tensorflow</p>
+          </div>
+          <div class="skill">
+            <img src="assets/opencv.png" alt="" />
+            <p>OpenCv</p>
+          </div>
+          <div class="skill">
+            <img src="assets/nvidia_jetson.png" alt="" />
+            <p>Nvidia Jetson</p>
+          </div>
+          <div class="skill">
+            <img src="assets/ubuntu.png" alt="" />
+            <p>Ubuntu</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="skill">
+            <img src="assets/mongo.png" alt="" />
+            <p>Mongo</p>
+          </div>
+          <div class="skill">
+            <img src="assets/express.png" alt="" />
+            <p>Express</p>
+          </div>
+          <div class="skill">
+            <img src="assets/react.png" alt="" />
+            <p>React</p>
+          </div>
+          <div class="skill">
+            <img src="assets/nodejs.png" alt="" />
+            <p>Node</p>
+          </div>
+        </div>
+      </div>
+      <div class="projects-container">
+        <h1>My projects</h1>
+        <div class="row">
+          <div class="project"></div>
+        </div>
+      </div>
     </div>
     <script>
       function myFunction() {
@@ -105,6 +225,32 @@
         } else {
           x.className = "topnav";
         }
+      }
+
+      var screenWidth = window.innerWidth;
+      if (screenWidth > 768) {
+        educationalInfo =
+          document.getElementsByClassName("educational-info")[0];
+        workInfo = document.getElementsByClassName("work-info")[0];
+
+        educationalInfo.addEventListener("mouseover", function () {
+          if (workInfo.classList.contains("hover")) {
+            workInfo.classList.remove("hover");
+          }
+          if (!educationalInfo.classList.contains("hover")) {
+            educationalInfo.classList.add("hover");
+          }
+        });
+
+        workInfo.addEventListener("mouseover", function () {
+          if (educationalInfo.classList.contains("hover")) {
+            educationalInfo.classList.remove("hover");
+          }
+          if (!workInfo.classList.contains("hover")) {
+            workInfo.classList.add("hover");
+          }
+        });
+        educationalInfo.classList.add("hover");
       }
     </script>
   </body>
