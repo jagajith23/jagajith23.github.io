@@ -257,7 +257,7 @@ nav {
 }
 
 /* Info page */
-#info-container {
+#info-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -266,7 +266,7 @@ nav {
   padding: 4% 7%;
 }
 
-#info-container h1 {
+#info-section h1 {
   font-size: 35px;
   font-weight: 700;
   color: #787879;
@@ -274,7 +274,7 @@ nav {
   padding-bottom: 10px;
 }
 
-#info-container p {
+#info-section p {
   font-size: 18px;
   font-weight: 400;
   color: #787879;
@@ -619,12 +619,12 @@ nav {
     font-size: 40px;
   }
 
-  #info-container h1 {
+  #info-section h1 {
     font-size: 32px;
     font-weight: 700;
   }
 
-  #info-container p {
+  #info-section p {
     font-size: 18px;
     font-weight: 400;
   }
@@ -648,12 +648,12 @@ nav {
     font-size: 35px;
   }
 
-  #info-container h1 {
+  #info-section h1 {
     font-size: 30px;
     font-weight: 700;
   }
 
-  #info-container p {
+  #info-section p {
     font-size: 15px;
     font-weight: 400;
   }
@@ -677,7 +677,7 @@ nav {
     font-size: 30px;
   }
 
-  #info-container h1 {
+  #info-section h1 {
     font-size: 28px;
     font-weight: 700;
   }
@@ -686,7 +686,7 @@ nav {
     font-size: 60px;
   }
 
-  #info-container p {
+  #info-section p {
     font-size: 13px;
     font-weight: 400;
   }
@@ -767,7 +767,7 @@ nav {
 }
 
 @media screen and (max-width: 750px) {
-  #info-container {
+  #info-section {
     align-items: center;
   }
 
