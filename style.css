@@ -280,22 +280,19 @@ nav {
   color: #787879;
 }
 
-.hover {
+#info-section .hover {
   transform: scale(1.1);
 }
 
-.hover .info-right p {
-  /* font-size: 20px; */
+#info-section .hover .info-right p {
   font-weight: 600;
 }
 
-.hover .info-left h1 {
-  /* font-size: 75px; */
+#info-section .hover .info-left h1 {
   color: #6752ea;
 }
 
-.hover .info-left p {
-  /* font-size: 20px; */
+#info-section .hover .info-left p {
   font-weight: 600;
   color: #6752ea;
 }
