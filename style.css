@@ -927,6 +927,7 @@ body {
 
   .card {
     height: 60%;
+    width: 100%;
   }
 
   .img-div {
@@ -964,6 +965,7 @@ body {
 
   .card {
     height: 55%;
+    width: 100%;
   }
 
   .card h1 {
@@ -1015,6 +1017,7 @@ body {
 
   .card {
     height: 45%;
+    width: 100%;
   }
 
   .card h1 {
@@ -1041,6 +1044,7 @@ body {
 
   .card {
     height: 35%;
+    width: 100%;
   }
 
   .card h1 {
