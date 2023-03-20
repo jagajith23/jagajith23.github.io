@@ -21,10 +21,6 @@
     <title>Jagajith</title>
   </head>
   <body>
-    <div id="scroll-percent" data-scrollPercentage>
-      <div class="percentage">&nbsp;</div>
-    </div>
-
     <div id="home">
       <header id="navbar">
         <nav class="navbar-container container">
@@ -48,16 +44,16 @@
           <div id="navbar-menu" aria-labelledby="navbar-toggle">
             <ul class="navbar-links">
               <li class="navbar-item">
-                <a class="navbar-link" href="#">About</a>
+                <a class="navbar-link" href="#info-section">About</a>
               </li>
               <li class="navbar-item">
-                <a class="navbar-link" href="#">Skills</a>
+                <a class="navbar-link" href="#skills-section">Skills</a>
               </li>
               <li class="navbar-item">
-                <a class="navbar-link" href="#">Projects</a>
+                <a class="navbar-link" href="#projects-section">Projects</a>
               </li>
               <li class="navbar-item">
-                <a class="navbar-link" href="#">Contact</a>
+                <a class="navbar-link" href="#contact">Contact</a>
               </li>
             </ul>
           </div>
@@ -98,6 +94,9 @@
             </ul>
           </div>
         </nav>
+        <div id="scroll-percent" data-scrollPercentage>
+          <div class="percentage">&nbsp;</div>
+        </div>
       </header>
       <div class="welcome-container">
         <div class="right">
@@ -113,12 +112,12 @@
             </p>
           </div>
           <div class="welcome-btn-container">
-            <button class="cnt-me">Contact me</button>
-            <button class="view-cv">
-              <a href="./" download="resume.pdf" class="view-cv-a">
-                Download CV
-              </a>
-            </button>
+            <a href="#contact-section">
+              <div class="cnt-me">Contact me</div>
+            </a>
+            <a href="./" download="resume.pdf" class="view-cv-a">
+              <div class="view-cv">Download CV</div>
+            </a>
           </div>
         </div>
       </div>
@@ -280,7 +279,7 @@
         </div>
       </a>
     </div>
-    <div id="footer">
+    <div id="contact-section">
       <div class="con-left">
         <div class="con-text">
           <h1>Get in touch</h1>
@@ -325,7 +324,7 @@
         </div>
       </div>
       <div class="con-right">
-        <div class="footer-circle">
+        <div class="contact-circle">
           <form action="mailto:jagajith23.work@gmail.com">
             <input
               type="email"
@@ -344,110 +343,9 @@
         </div>
       </div>
     </div>
-    <script>
-      const updateScrollPercentage = function () {
-        const heightOfWindow = window.innerHeight,
-          contentScrolled = window.pageYOffset,
-          bodyHeight = document.body.offsetHeight,
-          percentage = document.querySelector(
-            "[data-scrollPercentage] .percentage"
-          );
-        percentageVal = document.querySelector("#percentage-value");
-
-        if (bodyHeight - contentScrolled <= heightOfWindow) {
-          percentageVal.textContent = percentage.style.width = "100%";
-        } else {
-          const total = bodyHeight - heightOfWindow,
-            got = contentScrolled,
-            percent = parseInt((got / total) * 100);
-          percentageVal.textContent = percentage.style.width =
-            percent + 1 + "%";
-        }
-      };
-
-      window.addEventListener("scroll", updateScrollPercentage);
-
-      const navbarToggle = navbar.querySelector("#navbar-toggle");
-      let isNavbarExpanded =
-        navbarToggle.getAttribute("aria-expanded") === "true";
-
-      const toggleNavbarVisibility = () => {
-        isNavbarExpanded = !isNavbarExpanded;
-        navbarToggle.setAttribute("aria-expanded", isNavbarExpanded);
-      };
-
-      navbarToggle.addEventListener("click", toggleNavbarVisibility);
-
-      const navbarMenu = document.querySelector("#navbar-menu");
-      const navbarLinksContainer = navbarMenu.querySelector(".navbar-links");
-
-      navbarLinksContainer.addEventListener("click", (e) =>
-        e.stopPropagation()
-      );
-      navbarMenu.addEventListener("click", toggleNavbarVisibility);
-
-      var screenWidth = window.innerWidth;
-      if (screenWidth > 768) {
-        educationalInfo =
-          document.getElementsByClassName("educational-info")[0];
-        workInfo = document.getElementsByClassName("work-info")[0];
-
-        educationalInfo.addEventListener("mouseover", function () {
-          if (workInfo.classList.contains("hover")) {
-            workInfo.classList.remove("hover");
-          }
-          if (!educationalInfo.classList.contains("hover")) {
-            educationalInfo.classList.add("hover");
-          }
-        });
-
-        workInfo.addEventListener("mouseover", function () {
-          if (educationalInfo.classList.contains("hover")) {
-            educationalInfo.classList.remove("hover");
-          }
-          if (!workInfo.classList.contains("hover")) {
-            workInfo.classList.add("hover");
-          }
-        });
-        educationalInfo.classList.add("hover");
-      }
-
-      function inViewport(element) {
-        var bb = element.getBoundingClientRect();
-        return !(bb.top > innerHeight || bb.bottom < 0);
-      }
-
-      window.addEventListener("scroll", function () {
-        var welcomeEle =
-          document.getElementsByClassName("welcome-container")[0];
-        if (inViewport(welcomeEle)) {
-          welcomeEle.classList.add("is-inViewport");
-        } else {
-          if (welcomeEle.classList.contains("is-inViewport")) {
-            welcomeEle.classList.remove("is-inViewport");
-          }
-        }
-
-        var elements = document.querySelectorAll(".proj-row");
-        for (var i = 0; i < elements.length; i++) {
-          if (inViewport(elements[i])) {
-            elements[i].classList.add("is-inViewport");
-          } else {
-            if (elements[i].classList.contains("is-inViewport")) {
-              elements[i].classList.remove("is-inViewport");
-            }
-          }
-        }
-
-        var footerEle = document.getElementById("footer");
-        if (inViewport(footerEle)) {
-          footerEle.classList.add("is-inViewport");
-        } else {
-          if (footerEle.classList.contains("is-inViewport")) {
-            footerEle.classList.remove("is-inViewport");
-          }
-        }
-      });
-    </script>
+    <p class="copyright">
+      Jagajith. All rights reserved. Developed by Jagajith
+    </p>
+    <script src="index.js"></script>
   </body>
 </html>

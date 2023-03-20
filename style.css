@@ -39,7 +39,8 @@ body {
 }
 
 .container {
-  max-width: 1000px;
+  /* max-width: 1000px; */
+  max-width: 100%;
   padding: 0 1.4rem;
   margin: 0 auto;
 }
@@ -52,7 +53,7 @@ body {
   left: 0;
   right: 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  z-index: 30;
+  z-index: 15;
 }
 
 .navbar-container {
@@ -99,7 +100,6 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0 5% 0 22%;
 }
 
 .icon-bar {
@@ -140,7 +140,6 @@ body {
   visibility: hidden;
   left: 0;
   right: 0;
-  z-index: 10;
 }
 
 #navbar-toggle[aria-expanded="true"] + #navbar-menu {
@@ -332,15 +331,21 @@ body {
 .welcome-btn-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  /* width: 55%; */
+  width: 100%;
+}
+
+.welcome-btn-container a {
+  width: 100%;
+  text-decoration: none;
 }
 
 .cnt-me {
   height: 50px;
-  width: 45%;
+  /* width: 45%; */
+  width: 95%;
   border-radius: 30px;
   border: none;
   background: none;
@@ -352,28 +357,28 @@ body {
   font-weight: 500;
   border: transparent;
   cursor: pointer;
+  text-align: center;
+  padding: 15px 0;
 }
 
 .view-cv {
   height: 50px;
-  width: 45%;
+  /* width: 45%; */
+  width: 95%;
   border-radius: 30px;
   border: none;
   background: none;
-  /* color: #040415; */
   background-color: #f4f3f8;
-  /* background-color: #6752ea;
-  color: #f4f3f8; */
   font-size: 16px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   cursor: pointer;
+  text-align: center;
+  padding: 15px 0;
 }
 
 .cnt-me:hover,
 .view-cv:hover {
-  /* background-color: #d1d0d6;
-  color: #040415; */
   background-color: #ff4d1c;
 }
 
@@ -382,7 +387,7 @@ body {
   color: #040415;
 }
 
-.view-cv:hover > a {
+.view-cv:hover {
   color: #f4f3f8;
 }
 
@@ -549,6 +554,11 @@ body {
   transform: scale(1.5);
 }
 
+.skill:hover ~ skill {
+  transition-duration: 0.2s;
+  transition: transform;
+}
+
 .skill-hover img {
   width: 50px;
   height: 50px;
@@ -659,7 +669,7 @@ body {
 
 /* Footer */
 
-#footer {
+#contact-section {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -743,7 +753,7 @@ body {
   margin-left: 20%;
 }
 
-.footer-circle {
+.contact-circle {
   width: 500px;
   height: 500px;
   border-radius: 50%;
@@ -753,7 +763,7 @@ body {
   top: -100px;
 }
 
-.footer-circle form {
+.contact-circle form {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -762,7 +772,7 @@ body {
   height: 100%;
 }
 
-.footer-circle form input {
+.contact-circle form input {
   width: 80%;
   height: 60px;
   margin: 5% 0 0 10%;
@@ -776,11 +786,11 @@ body {
   letter-spacing: 1px;
 }
 
-.footer-circle form input:focus {
+.contact-circle form input:focus {
   outline: none;
 }
 
-.footer-circle form button {
+.contact-circle form button {
   width: 40%;
   height: 50px;
   margin: 5% 0 0 10%;
@@ -792,8 +802,30 @@ body {
   background-color: #fff;
 }
 
-.is-inViewport .con-left {
+.is-inViewport .con-text {
   animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.is-inViewport .card {
+  animation: 1.2s ease-out 0s 1 slideInFromLeft;
+}
+
+.is-inViewport .contact-circle {
+  animation: 1.4s ease-out 0s 1 slideInFromRight;
+}
+
+.copyright {
+  width: 100%;
+  height: 50px;
+  background-color: #6752ea;
+  color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 1300px) {
@@ -824,12 +856,12 @@ body {
     font-size: 70px;
   }
 
-  .footer-circle {
+  .contact-circle {
     width: 400px;
     height: 400px;
   }
 
-  .footer-circle form input {
+  .contact-circle form input {
     width: 80%;
     height: 50px;
     margin: 5% 0 0 10%;
@@ -843,7 +875,7 @@ body {
     letter-spacing: 1px;
   }
 
-  .footer-circle form button {
+  .contact-circle form button {
     width: 40%;
     height: 40px;
     margin: 5% 0 0 10%;
@@ -853,6 +885,11 @@ body {
     font-weight: 400;
     color: #6752ea;
     background-color: #fff;
+  }
+
+  .card {
+    height: 50%;
+    width: 100%;
   }
 }
 
@@ -884,12 +921,12 @@ body {
     font-size: 65px;
   }
 
-  .footer-circle {
+  .contact-circle {
     width: 350px;
     height: 350px;
   }
 
-  .footer-circle form input {
+  .contact-circle form input {
     width: 80%;
     height: 50px;
     margin: 5% 0 0 10%;
@@ -903,7 +940,7 @@ body {
     letter-spacing: 1px;
   }
 
-  .footer-circle form button {
+  .contact-circle form button {
     width: 40%;
     height: 40px;
     margin: 5% 0 0 10%;
@@ -916,12 +953,8 @@ body {
   }
 
   .card {
-    height: 60%;
+    height: 40%;
     width: 100%;
-  }
-
-  .img-div {
-    width: 35%;
   }
 }
 
@@ -954,12 +987,8 @@ body {
   }
 
   .card {
-    height: 55%;
+    height: 38%;
     width: 100%;
-  }
-
-  .card h1 {
-    font-size: 20px;
   }
 
   .card p {
@@ -1006,7 +1035,7 @@ body {
   }
 
   .card {
-    height: 45%;
+    height: 35%;
     width: 100%;
   }
 
@@ -1033,11 +1062,11 @@ body {
   }
 
   .card {
-    height: 35%;
+    height: 30%;
     width: 100%;
   }
 
-  .card h1 {
+  /* .card h1 {
     font-size: 20px;
   }
 
@@ -1047,15 +1076,15 @@ body {
 
   .card a i {
     font-size: 13px;
-  }
+  } */
 
-  .footer-circle {
+  .contact-circle {
     width: 300px;
     height: 300px;
     top: -50px;
   }
 
-  .footer-circle form input {
+  .contact-circle form input {
     width: 80%;
     height: 50px;
     margin: 5% 0 0 10%;
@@ -1068,7 +1097,7 @@ body {
     background-color: #908bf5;
   }
 
-  .footer-circle form button {
+  .contact-circle form button {
     width: 40%;
     height: 40px;
     margin: 5% 0 0 10%;
@@ -1146,7 +1175,7 @@ body {
     font-size: 10px;
   }
 
-  #footer {
+  #contact {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -1166,7 +1195,11 @@ body {
 
   .card {
     width: 60%;
-    height: 40%;
+    height: 32%;
+  }
+
+  #navbar-toggle {
+    margin-left: 20%;
   }
 }
 
@@ -1197,8 +1230,49 @@ body {
   }
 }
 
-@media screen and (max-width: 540px) {
+@media screen and (max-width: 680px) {
+  .card {
+    height: 35%;
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .card {
+    height: 25%;
+    width: 70%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .card {
+    height: 30%;
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    height: 30%;
+    width: 100%;
+  }
+
+  .social {
+    display: none;
+  }
+
   #navbar-toggle {
-    margin: 0 0 0 15%;
+    margin-left: 65%;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .card {
+    height: 25%;
+    width: 100%;
+  }
+
+  #navbar-toggle {
+    margin-left: 60%;
   }
 }
