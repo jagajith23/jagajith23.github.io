@@ -11,6 +11,23 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
+  overflow-x: hidden;
+}
+
+#scroll-percent {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+[data-scrollPercentage] .percentage {
+  display: inline-block;
+  background-color: #ff4d1c;
+  height: 4px;
+  width: 0;
 }
 
 nav {
@@ -130,6 +147,53 @@ nav {
 
 /* Welcome page */
 
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .welcome-container {
   display: flex;
   flex-direction: row-reverse;
@@ -139,11 +203,21 @@ nav {
   padding: 8% 7%;
 }
 
-/* .left {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-} */
+.is-inViewport .left .welcome-texts-container .welcome-text-1 {
+  animation: 1.2s ease-out 0s 1 slideInFromLeft;
+}
+
+.is-inViewport .left .welcome-texts-container .welcome-text-2 {
+  animation: 1.1s ease-out 0s 1 slideInFromLeft;
+}
+
+.is-inViewport .left .welcome-btn-container {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.is-inViewport .right {
+  animation: 1s ease-out 0s 1 slideInFromRight;
+}
 
 .welcome-texts-container {
   display: flex;
@@ -422,6 +496,10 @@ nav {
   margin-bottom: 5%;
 }
 
+#projects-section a {
+  text-decoration: none;
+}
+
 .proj-row {
   display: flex;
   flex-direction: column;
@@ -456,6 +534,11 @@ nav {
   -moz-border-radius: 20px;
   border-radius: 20px;
   margin-top: 5%;
+  visibility: hidden;
+}
+
+.proj-img-animation {
+  animation: 1.1s ease-out 0s 1 slideInFromBottom;
 }
 
 .proj-img img {
@@ -463,6 +546,19 @@ nav {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
+}
+
+.is-inViewport .proj-img {
+  visibility: visible;
+  animation: 1s ease-out 0s 1 slideInFromBottom;
+}
+
+.is-inViewport .proj-title-and-date h1 {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.is-inViewport .proj-title-and-date p {
+  animation: 1s ease-out 0s 1 slideInFromRight;
 }
 
 .odd {
@@ -605,6 +701,10 @@ nav {
   font-weight: 400;
   color: #6752ea;
   background-color: #fff;
+}
+
+.is-inViewport .con-left {
+  animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 @media screen and (max-width: 1300px) {

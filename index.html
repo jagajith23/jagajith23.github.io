@@ -21,6 +21,10 @@
     <title>Jagajith</title>
   </head>
   <body>
+    <div id="scroll-percent" data-scrollPercentage>
+      <div class="percentage">&nbsp;</div>
+    </div>
+
     <div id="welcome-screen">
       <nav>
         <div class="name-container">
@@ -34,7 +38,6 @@
               class="topnav-icon"
               onclick="myFunction()"
             >
-              target="_blank"
               <i class="fa fa-bars"></i>
             </a>
             <a href="#welcome-screen" class="a-topnav">Home</a>
@@ -326,6 +329,28 @@
       </div>
     </div>
     <script>
+      const updateScrollPercentage = function () {
+        const heightOfWindow = window.innerHeight,
+          contentScrolled = window.pageYOffset,
+          bodyHeight = document.body.offsetHeight,
+          percentage = document.querySelector(
+            "[data-scrollPercentage] .percentage"
+          );
+        percentageVal = document.querySelector("#percentage-value");
+
+        if (bodyHeight - contentScrolled <= heightOfWindow) {
+          percentageVal.textContent = percentage.style.width = "100%";
+        } else {
+          const total = bodyHeight - heightOfWindow,
+            got = contentScrolled,
+            percent = parseInt((got / total) * 100);
+          percentageVal.textContent = percentage.style.width =
+            percent + 1 + "%";
+        }
+      };
+
+      window.addEventListener("scroll", updateScrollPercentage);
+
       function myFunction() {
         var x = document.getElementById("myTopnav");
         if (x.className === "topnav") {
@@ -360,6 +385,43 @@
         });
         educationalInfo.classList.add("hover");
       }
+
+      function inViewport(element) {
+        var bb = element.getBoundingClientRect();
+        return !(bb.top > innerHeight || bb.bottom < 0);
+      }
+
+      window.addEventListener("scroll", function () {
+        var welcomeEle =
+          document.getElementsByClassName("welcome-container")[0];
+        if (inViewport(welcomeEle)) {
+          welcomeEle.classList.add("is-inViewport");
+        } else {
+          if (welcomeEle.classList.contains("is-inViewport")) {
+            welcomeEle.classList.remove("is-inViewport");
+          }
+        }
+
+        var elements = document.querySelectorAll(".proj-row");
+        for (var i = 0; i < elements.length; i++) {
+          if (inViewport(elements[i])) {
+            elements[i].classList.add("is-inViewport");
+          } else {
+            if (elements[i].classList.contains("is-inViewport")) {
+              elements[i].classList.remove("is-inViewport");
+            }
+          }
+        }
+
+        var footerEle = document.getElementById("footer");
+        if (inViewport(footerEle)) {
+          footerEle.classList.add("is-inViewport");
+        } else {
+          if (footerEle.classList.contains("is-inViewport")) {
+            footerEle.classList.remove("is-inViewport");
+          }
+        }
+      });
     </script>
   </body>
 </html>
