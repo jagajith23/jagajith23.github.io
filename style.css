@@ -1058,8 +1058,20 @@ body {
   }
 
   .card {
-    height: 30%;
+    height: 28%;
     width: 100%;
+  }
+
+  .text-div h1 {
+    font-size: 18px;
+  }
+
+  .text-div p {
+    font-size: 15px;
+  }
+
+  .text-div a i {
+    font-size: 16px;
   }
 
   .contact-circle {
@@ -1102,6 +1114,10 @@ body {
 }
 
 @media screen and (max-width: 750px) {
+  .social {
+    display: none;
+  }
+
   #info-section {
     align-items: center;
   }
@@ -1178,15 +1194,31 @@ body {
   }
 
   .card {
-    width: 60%;
-    height: 32%;
+    width: 70%;
+    height: 50%;
   }
 
   #navbar-toggle {
-    margin-left: 20%;
+    margin-left: 65%;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .card {
+    height: 35%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .card {
+    height: 27%;
+    width: 100%;
+  }
+
+  .text-div {
+    width: 100%;
+  }
+}
 @media screen and (min-width: 750px) {
   #navbar-toggle,
   #navbar-toggle[aria-expanded="true"] {
