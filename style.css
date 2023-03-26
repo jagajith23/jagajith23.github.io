@@ -11,9 +11,61 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #fff;
+  background-image: url("assets/background/cubes.png");
   overflow-x: hidden;
   z-index: 1;
 }
+
+/* Animations */
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page remaining indicator */
 
 #scroll-percent {
   position: fixed;
@@ -43,6 +95,8 @@ body {
   padding: 0 1.4rem;
   margin: 0 auto;
 }
+
+/* Navbar */
 
 #navbar {
   --navbar-height: 64px;
@@ -225,53 +279,6 @@ body {
 }
 
 /* Welcome page */
-
-@keyframes slideInFromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-@keyframes slideInFromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInFromTop {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .welcome-container {
   display: flex;
@@ -576,6 +583,7 @@ body {
 }
 
 /* Project page */
+
 #projects-section {
   display: flex;
   flex-direction: column;
@@ -650,19 +658,26 @@ body {
   animation: 1s ease-out 0s 1 slideInFromRight;
 }
 
-.odd {
+.odd .proj-row {
   background-color: #f4f3f8;
 }
 
-.even {
+.even .proj-row {
   background-color: #6752ea;
   color: #fff;
 }
 
-.even p {
+.even .proj-row .proj-title-and-date p {
   color: #fff;
 }
 
+.odd a:visited {
+  color: #040415;
+}
+
+.even a:visited {
+  color: #fff;
+}
 /* Footer */
 
 #contact-section {
