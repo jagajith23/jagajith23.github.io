@@ -1,17 +1,11 @@
 const updateScrollPercentage = function () {
-  const heightOfWindow = window.innerHeight,
-    contentScrolled = window.pageYOffset,
-    bodyHeight = document.body.offsetHeight,
-    percentage = document.querySelector("[data-scrollPercentage] .percentage");
-  percentageVal = document.querySelector("#percentage-value");
+  const windowHeight = window.innerHeight;
+  const fullHeight = document.body.clientHeight;
+  const scrolled = window.scrollY;
+  const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100;
 
-  if (bodyHeight - contentScrolled <= heightOfWindow) {
-  } else {
-    const total = bodyHeight - heightOfWindow,
-      got = contentScrolled,
-      percent = parseInt((got / total) * 100);
-    percentage.style.width = percent + 1 + "%";
-  }
+  percentage = document.querySelector("[data-scrollPercentage] .percentage");
+  percentage.style.width = percentScrolled + "%";
 };
 
 window.addEventListener("scroll", updateScrollPercentage);
